@@ -5,13 +5,12 @@
 $primary: #FFF6F0;
 $secondary: #4C5D63;
 $tertiary: #87AE88;
+$success: #87AE88;
+
 
 $enable-shadows:true !default;
 
-@mixin shadow{
-    box-shadow: 1px 4px 2px rgba(0,0,0,0.25);
-}
-
+$box-shadow: 1px 4px 2px rgba(0,0,0,0.25);
 
 @mixin barlow-condensed{
     font-family: 'Barlow Condensed', sans-serif;
@@ -22,13 +21,13 @@ $enable-shadows:true !default;
 }
 
 
+
 // Navbar
 
 .navbar{
     font-weight:400;
     font-size:0.8em;
-    @include barlow-condensed;
-    @include shadow;
+    @include barlow-condensed;   
 }
 
 
@@ -50,7 +49,6 @@ $nav-link-font-size:2em;
     @include barlow-semi-condensed;
 }
 
-$card-box-shadow: 1px 4px 2px rgba(0,0,0,0.25);
 $card-border-width:0;
 
 $btn-border-radius-lg:90px;
@@ -58,14 +56,15 @@ $btn-padding-y-lg:13px;
 $btn-font-size-lg:23px;
 $btn-font-family: 'Barlow Condensed', sans-serif;
 $btn-font-weight:500;
-$btn-box-shadow: 1px 4px 2px rgba(0,0,0,0.25);
 
 $input-border-radius:90px;
-$input-box-shadow: 1px 4px 2px rgba(0,0,0,0.25);
+
+$input-focus-border-color:$success;
+$form-check-input-checked-color:$success;
+
 
 .img-cropped{
     border-radius: 10px;
-    @include shadow;
 }
 
 $display-font-family:'Barlow Condensed', sans-serif;
@@ -106,8 +105,10 @@ $spacers: (
 @import "../node_modules/bootstrap/scss/utilities";
 @import "../node_modules/bootstrap/scss/utilities/api";
 
+
 $custom-colors:(
     "villeorange": rgb(227,145,97),
+    "darkertext": rgb(77,77,77,1)
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
